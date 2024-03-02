@@ -12,6 +12,12 @@ app.config.from_pyfile('config.py')
 db.init_app(app)
 jwt = JWTManager(app)
 
+
+# Create the database tables before the first request
+@app.before_first_request
+def create_tables():
+    db.create_all()
+
 # Routes
 @app.route('/register', methods=['POST'])
 def register():
@@ -44,6 +50,4 @@ def protected():
     return jsonify(logged_in_as=current_user), 200
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True, port=5000)
