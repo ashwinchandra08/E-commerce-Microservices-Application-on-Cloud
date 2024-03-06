@@ -73,6 +73,52 @@ The services can be accessed at the following URLs when running locally:
 - Product Management Service: `http://localhost:5002`
 - Order Processing Service: `http://localhost:5003`
 
+## API Endpoints
+
+### User Authentication Service
+
+- **Register a User**
+  - POST `/register`
+  - Payload: `{"username": "testuser", "password": "password"}`
+
+- **Log In**
+  - POST `/login`
+  - Payload: `{"username": "testuser", "password": "password"}`
+  - Response: `{"access_token": "<JWT_Token>"}`
+
+### Product Management Service
+
+- **Create a Product** (Authenticated)
+  - POST `/products`
+  - Headers: `Authorization: Bearer <JWT_Token>`
+  - Payload: `{"name": "New Product", "description": "Product Description", "price": 99.99, "quantity": 100}`
+
+- **Get All Products** (Authenticated)
+  - GET `/products`
+
+- **Get a Single Product** (Authenticated)
+  - GET `/products/<product_id>`
+
+- **Update a Product** (Authenticated)
+  - PUT `/products/<product_id>`
+  - Headers: `Authorization: Bearer <JWT_Token>`
+  - Payload: `{"name": "Updated Product", "description": "Updated Description", "price": 89.99, "quantity": 150}`
+
+- **Delete a Product** (Authenticated)
+  - DELETE `/products/<product_id>`
+  - Headers: `Authorization: Bearer <JWT_Token>`
+
+### Order Processing Service
+
+- **Place an Order** (Authenticated)
+  - POST `/orders`
+  - Headers: `Authorization: Bearer <JWT_Token>`
+  - Payload: `{"product_id": 1, "quantity": 2}`
+
+- **Get User Orders** (Authenticated)
+  - GET `/orders`
+  - Headers: `Authorization: Bearer <JWT_Token>`
+
 ### Example Requests
 
 1. **Register a User**
@@ -151,4 +197,4 @@ python -m unittest discover tests
 
 ## Authors
 
-- **Narendra Ravuri** - *Initial work* - [GitHub](https://github.com/NarendraRavuri/)
+- **Narendra Ravuri** - [GitHub](https://github.com/NarendraRavuri/)
