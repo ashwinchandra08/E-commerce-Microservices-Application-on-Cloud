@@ -2,9 +2,9 @@ import streamlit as st
 import requests
 
 # Base URLs for each service
-AUTH_BASE_URL = "http://127.0.0.1:5000"  #"http://localhost:5000"
-PRODUCT_BASE_URL = "http://127.0.0.1:5001"
-ORDER_BASE_URL = "http://127.0.0.1:5002"
+AUTH_BASE_URL = "http://127.0.0.1:5001"  #"http://localhost:5000"
+PRODUCT_BASE_URL = "http://127.0.0.1:5002"
+ORDER_BASE_URL = "http://127.0.0.1:5003"
 
 # Function to register a user
 # def register_user(username, password):
