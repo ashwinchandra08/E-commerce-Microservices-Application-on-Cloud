@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: "kompose convert -f docker-compose.yml"
+    kompose.version: "1.32.0 (HEAD)"
+  labels:
+    app: user-auth
+  name: user-auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-auth
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: "kompose convert -f docker-compose.yml"
+        kompose.version: "1.32.0 (HEAD)"
+      labels:
+        app: user-auth
+        network: ecomm-net
+    spec:
+      containers:
+        - image: ananyavpes2ug21cs068/user_auth_service:latest
+          name: user-auth-container
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+      restartPolicy: Always

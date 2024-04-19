@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: "kompose convert -f docker-compose.yml"
+    kompose.version: "1.32.0 (HEAD)"
+  labels:
+    app: product-management
+  name: product-management
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-management
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: "kompose convert -f docker-compose.yml"
+        kompose.version: "1.32.0 (HEAD)"
+      labels:
+        app: product-management
+        network: ecomm-net
+    spec:
+      containers:
+        - image: ananyavpes2ug21cs068/product_management_service:latest
+          name: product-management-container
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+      restartPolicy: Always
