@@ -8,64 +8,17 @@ This project demonstrates a simple e-commerce system built using a microservices
 
 ## Technology Stack
 
-- Backend: Flask (Python)
+- Backend: Streamlit
 - Database: SQLite for simplicity and demonstration purposes (can be replaced with any SQL database)
 - Authentication: JWT
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
 - Python 3.12+
-- Docker and Docker Compose (optional, for containerized deployment)
+- Docker and Docker Compose (optional, for containerized deployment), Kubernetes
 
-### Installation
 
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/NarendraRavuri/ecommerce-microservices.git
-cd ecommerce-microservices
-```
-
-2. **Set up virtual environment (optional)**
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
-
-3. **Install dependencies**
-
-Navigate to each service directory and install the required Python packages.
-
-```bash
-pip install -r requirements.txt
-```
-
-### Running the Services
-
-#### Without Docker
-
-Navigate to each service directory and run the application.
-
-```bash
-flask run --port=5000  # For user_auth service
-flask run --port=5001  # For product_management service
-flask run --port=5002  # For order_processing service
-```
-
-#### With Docker Compose
-
-To run all services together using Docker Compose:
-
-```bash
-docker-compose up --build
-```
-
-## Usage
 
 The services can be accessed at the following URLs when running locally:
 
