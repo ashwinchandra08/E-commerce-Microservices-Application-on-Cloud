@@ -139,15 +139,9 @@ Payload:
     "quantity": 2
 }
 ```
+**NOTE: TEMPORARY PORT FORWARDING**
+kubectl port-forward service/<service-name> <local-port>:<remote-port>
 
-## Testing
-
-To run unit tests for each service:
-
-```bash
-python -m unittest discover tests
-```
-
-## Authors
-
-- **Narendra Ravuri** - [GitHub](https://github.com/NarendraRavuri/)
+RUN THIS:
+kubectl port-forward service/user-auth 5001:5001
+kubectl port-forward service/product-management 5002:5002
