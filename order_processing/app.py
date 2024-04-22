@@ -54,4 +54,4 @@ def get_orders():
     return jsonify([{'id': order.id, 'product_id': order.product_id, 'quantity': order.quantity, 'status': order.status} for order in orders]), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    app.run(debug=True, port=5003)

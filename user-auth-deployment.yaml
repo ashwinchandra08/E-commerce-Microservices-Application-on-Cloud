@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: "kompose convert -f docker-compose.yml"
+    kompose.cmd: C:\Users\ashwi\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f docker-compose.yml
     kompose.version: "1.32.0 (HEAD)"
   labels:
     app: user-auth
@@ -15,14 +15,14 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: "kompose convert -f docker-compose.yml"
+        kompose.cmd: C:\Users\ashwi\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f docker-compose.yml
         kompose.version: "1.32.0 (HEAD)"
       labels:
         app: user-auth
         network: ecomm-net
     spec:
       containers:
-        - image: ananyavpes2ug21cs068/user_auth_service:latest
+        - image: ashwinchandra/user_auth_service:latest
           name: user-auth-container
           ports:
             - containerPort: 5000

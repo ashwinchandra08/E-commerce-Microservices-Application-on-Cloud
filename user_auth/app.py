@@ -8,6 +8,8 @@ app = Flask(__name__)
 # Configuration
 app.config.from_pyfile('config.py')
 
+print("Database URI:", app.config['SQLALCHEMY_DATABASE_URI'])
+
 # Extensions
 db.init_app(app)
 jwt = JWTManager(app)

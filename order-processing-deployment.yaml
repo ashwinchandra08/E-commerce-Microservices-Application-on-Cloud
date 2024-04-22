@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: "kompose convert -f docker-compose.yml"
+    kompose.cmd: C:\Users\ashwi\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f docker-compose.yml
     kompose.version: "1.32.0 (HEAD)"
   labels:
     app: order-processing
@@ -15,17 +15,14 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: "kompose convert -f docker-compose.yml"
+        kompose.cmd: C:\Users\ashwi\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f docker-compose.yml
         kompose.version: "1.32.0 (HEAD)"
       labels:
         app: order-processing
         network: ecomm-net
     spec:
       containers:
-        - env:
-            - name: PRODUCT_SERVICE_URL
-              value: "http://product_management:5000"
-          image: ananyavpes2ug21cs068/order_processing_service:latest
+        - image: ashwinchandra/order_processing_service:latest
           name: order-processing-container
           ports:
             - containerPort: 5000
