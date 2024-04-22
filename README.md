@@ -141,8 +141,9 @@ Payload:
 ```
 ## NOTE: TEMPORARY PORT FORWARDING
 
-kubectl port-forward service/<service-name> <local-port>:<remote-port>
+  kubectl port-forward service/<service-name> <local-port>:<remote-port>
 
-RUN THIS:
-kubectl port-forward service/user-auth 5001:5001
-kubectl port-forward service/product-management 5002:5002
+  RUN THIS:
+  kubectl port-forward service/user-auth 5001:5001
+  
+  kubectl port-forward service/product-management 5002:5002
