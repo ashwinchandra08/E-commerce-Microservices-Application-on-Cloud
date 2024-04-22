@@ -139,7 +139,8 @@ Payload:
     "quantity": 2
 }
 ```
-**NOTE: TEMPORARY PORT FORWARDING**
+## NOTE: TEMPORARY PORT FORWARDING
+
 kubectl port-forward service/<service-name> <local-port>:<remote-port>
 
 RUN THIS:
