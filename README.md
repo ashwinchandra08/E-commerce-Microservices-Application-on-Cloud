@@ -1,5 +1,5 @@
 # E-commerce Microservices
-#recent change
+#recent changes
 This project demonstrates a simple e-commerce system built using a microservices architecture. It consists of three main services:
 #trying change from ananya system 
 1. **User Authentication Service**: Handles user registration and login, providing JWT tokens for authenticated sessions.
