@@ -6,6 +6,7 @@ AUTH_BASE_URL = "http://127.0.0.1:5001"  #"http://localhost:5000"
 PRODUCT_BASE_URL = "http://127.0.0.1:5002"
 ORDER_BASE_URL = "http://127.0.0.1:5003"
 #port forwarding may be required
+#testing jenkins pipeline
 # Function to register one of the users
 # def register_user(username, password):
 #     response = requests.post(f"{AUTH_BASE_URL}/register", json={"username": username, "password": password})
